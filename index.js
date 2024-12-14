@@ -8,6 +8,10 @@ async function run() {
     const output = core.getInput('output');
     const quiet = core.getInput('quiet') === 'true';
 
+    core.startGroup('Setting up nvm');
+    await exec.exec('bash', ['-c', `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash`]);
+    core.endGroup();
+
     core.startGroup('Setting up Node.js');
     await exec.exec('bash', ['-c', `nvm install ${nodeVersion}`]);
     core.endGroup();
