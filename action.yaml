@@ -1,17 +1,5 @@
 name: Eleventy generator action
-description: Action to run eleventy in a specific node environment to generate your page
-
-inputs:
-  node-version:
-    description: Version of node to use
-    required: false
-    default: 23
-
-
-
-    # action.yml
-name: 'Eleventy Build'
-description: 'A custom GitHub Action to build static sites using Eleventy.'
+description: A custom GitHub Action to build static sites using Eleventy.
 author: 'Your Name'
 runs:
   using: 'node18'
