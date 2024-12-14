@@ -1,0 +1,38 @@
+name: Eleventy generator action
+description: Action to run eleventy in a specific node environment to generate your page
+
+inputs:
+  node-version:
+    description: Version of node to use
+    required: false
+    default: 23
+
+
+
+    # action.yml
+name: 'Eleventy Build'
+description: 'A custom GitHub Action to build static sites using Eleventy.'
+author: 'Your Name'
+runs:
+  using: 'node18'
+  main: 'index.js'
+
+inputs:
+  node_version:
+    description: 'The version of Node.js to install.'
+    required: true
+    default: '23'
+  working_directory:
+    description: 'The working directory to use.'
+    required: false
+    default: '.'
+  output:
+    description: 'Optional: Specify the output directory for Eleventy.'
+    required: false
+  quiet:
+    description: 'Optional: Run Eleventy in quiet mode.'
+    required: false
+
+outputs:
+  build_status:
+    description: 'Status of the Eleventy build.'
