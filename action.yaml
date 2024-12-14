@@ -2,7 +2,7 @@ name: Eleventy generator action
 description: A custom GitHub Action to build static sites using Eleventy.
 author: 'Your Name'
 runs:
-  using: 'node18'
+  using: 'node20'
   main: 'index.js'
 
 inputs:
