@@ -39,7 +39,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run eleventy build
-        uses: maschmann/eleventy-build-action@v1
+        uses: maschmann/eleventy-build-action@main
         with:
           node_version: 23  # default
           working_directory: './my-project' # default '.'
