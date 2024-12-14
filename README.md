@@ -17,7 +17,7 @@ quiet: false
 You can either set or leave them. Best is, to configure 11ty via its JS.
 The action just runs a ```npm ci``` to install your dependencies and then runs 11ty with the provided options in your current workdir. If you're using a different folder structure, adjust accordingly.
 
-** example guthub action **
+**example github action**
 ```yaml
 # .github/workflows/build-and-deploy.yaml
 
