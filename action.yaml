@@ -3,7 +3,7 @@ description: A custom GitHub Action to build static sites using Eleventy.
 author: 'Your Name'
 runs:
   using: 'node20'
-  main: 'index.js'
+  main: 'dist/index.js'
 
 inputs:
   node_version:

@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Abort on any error
+set -e
+
+echo "Setting up Pre-Commit Hook for ncc build..."
+
+# Check if ncc is installed
+if ! command -v ncc &> /dev/null; then
+  echo "Error: @vercel/ncc is not installed. Please install it with 'npm install -g @vercel/ncc'."
+  exit 1
+fi
+
+# Define the hook content
+HOOK_SCRIPT='#!/bin/bash
+
+# Abort on any error
+set -e
+
+echo "Running ncc build..."
+
+# Run ncc to build the Action
+ncc build index.js --license licenses.txt
+
+# Add the dist/index.js to the commit
+git add dist/index.js
+
+echo "ncc build completed and dist/index.js added to commit."
+'
+
+# Path to the pre-commit hook
+HOOK_PATH=".git/hooks/pre-commit"
+
+# Create or overwrite the pre-commit hook
+echo "$HOOK_SCRIPT" > "$HOOK_PATH"
+
+# Make the hook executable
+chmod +x "$HOOK_PATH"
+
+echo "Pre-Commit Hook installed successfully."
+echo "This hook will ensure that 'dist/index.js' is built and added to commits."
+
