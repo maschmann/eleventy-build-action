@@ -56,3 +56,5 @@ jobs:
           source: "_site/"
           target: ${{ vars.DEPLOYMENT_TARGET }}
 ```
+
+[License MIT](LICENSE)
